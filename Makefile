@@ -137,7 +137,6 @@ User/Software/USB_VirCom.c \
 User/Software/Auto_control.c \
 User/Software/Power_switch.c \
 User/Software/Shoot.c \
-User/Software/music.c \
 User/Software/Navigation.c
 
 
