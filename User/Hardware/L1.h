@@ -1,11 +1,12 @@
 /**
  * @file L1.h
- * @author Nas
- * @brief
+ * @author Nas (1319621819@qq.com)
+ * @brief 
  * @version 0.1
- * @date 2025-9-25
- *
- *
+ * @date 2025-10-03
+ * 
+ * @copyright Copyright (c) 2025
+ * 
  */
 
 #ifndef __L1_H__
@@ -44,8 +45,8 @@ typedef enum {
 
 typedef struct
 {
-	float pitch;
 	float roll;
+	float pitch;
 	float yaw;
 
 	float gyro[3];
@@ -59,7 +60,6 @@ typedef struct
 
 void IMU_UpdateData(uint8_t* pData);
 void IMU_RequestData(FDCAN_HandleTypeDef* hfdcan,uint16_t can_id,uint8_t reg);
-void IMU_Decode(void);
-void DMIMU_decode_candata(FDCAN_HandleTypeDef *hfdcan, uint8_t *data, uint32_t receive_id);
+
 extern uint8_t freq_1k;
 #endif

@@ -1,11 +1,12 @@
 /**
  * @file HI229.c
- * @author Nas
- * @brief
+ * @author Nas (1319621819@qq.com)
+ * @brief 
  * @version 0.1
- * @date 2025-9-19
- *
- *
+ * @date 2025-10-03
+ * 
+ * @copyright Copyright (c) 2025
+ * 
  */
 
 #include "HI229.h"

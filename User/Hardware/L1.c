@@ -1,11 +1,12 @@
 /**
  * @file L1.c
- * @author Nas
- * @brief
+ * @author Nas (1319621819@qq.com)
+ * @brief 
  * @version 0.1
- * @date 2025-9-25
- *
- *
+ * @date 2025-10-03
+ * 
+ * @copyright Copyright (c) 2025
+ * 
  */
 
 #include "L1.h"
@@ -156,37 +157,3 @@ void IMU_UpdateData(uint8_t* pData)
 
 }
 
-void IMU_Decode()
-{
-    if(freq_1k)
-		{
-			tick_ms++;
-			
-			if(tick_ms%4==0)
-			{
-				IMU_RequestData(&hfdcan3,0x01,4);
-			}
-			else if(tick_ms%3==0)
-			{
-				IMU_RequestData(&hfdcan3,0x01,3);
-			}
-			else if(tick_ms%2==0)
-			{
-				IMU_RequestData(&hfdcan3,0x01,2);
-			}
-			else if(tick_ms%1==0)
-			{
-				IMU_RequestData(&hfdcan3,0x01,1);
-			}
-			
-			if(tick_ms>1000)
-				tick_ms=0;
-				
-			freq_1k=0;
-		}
-}
-
-void DMIMU_decode_candata(FDCAN_HandleTypeDef *hfdcan, uint8_t *data, uint32_t receive_id)
-{
-	
-}

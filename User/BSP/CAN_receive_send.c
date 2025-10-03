@@ -68,7 +68,7 @@ uint8_t fdcanx_send_data(FDCAN_HandleTypeDef *hfdcan, uint16_t id, uint8_t *data
   TxHeader.Identifier = id;
   TxHeader.IdType = FDCAN_STANDARD_ID;              // 标准ID
   TxHeader.TxFrameType = FDCAN_DATA_FRAME;          // 数据帧
-  TxHeader.DataLength = FDCAN_DLC_BYTES_8;          // 发送数据长度
+  TxHeader.DataLength = len << 16;/* FDCAN_DLC_BYTES_8 */          // 发送数据长度
   TxHeader.ErrorStateIndicator = FDCAN_ESI_ACTIVE;  // 设置错误状态指示
   TxHeader.BitRateSwitch = FDCAN_BRS_OFF;           // 不开启可变波特率
   TxHeader.FDFormat = FDCAN_CLASSIC_CAN;            // 普通CAN格式
@@ -112,7 +112,9 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
   {
     HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &rx_header, rx_data);
 
-      IMU_UpdateData(rx_data);
+        IMU_UpdateData(rx_data);
+
+      
 
     // 超电帧
     if ((rx_header.Identifier == Supercap_receive_id) ||

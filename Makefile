@@ -117,6 +117,8 @@ Algorithm/slope.c \
 User/BSP/UART_data_txrx.c \
 User/BSP/CAN_receive_send.c \
 User/BSP/Stm32_time.c \
+User/BSP/bsp_uart.c \
+User/BSP/bsp_usart.c \
 User/Hardware/motor.c \
 User/Hardware/supercup.c \
 User/Hardware/IMU_updata.c \
@@ -135,7 +137,8 @@ User/Software/USB_VirCom.c \
 User/Software/Auto_control.c \
 User/Software/Power_switch.c \
 User/Software/Shoot.c \
-User/Software/music.c
+User/Software/music.c \
+User/Software/Navigation.c
 
 
 

@@ -320,6 +320,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE BEGIN Callback 0 */
   static int i = 0;
   static uint32_t tick_ms=0;
+  
   /* USER CODE END Callback 0 */
   if (htim->Instance == TIM23)
   {
@@ -343,28 +344,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   {
     tick_ms = 0;
   }
-    /* tick_ms++;
-			
-    if(tick_ms%4==0)
-    {
-      IMU_RequestData(&hfdcan3,0x01,4);
-    }
-    else if(tick_ms%3==0)
-    {
-      IMU_RequestData(&hfdcan3,0x01,3);
-    }
-    else if(tick_ms%2==0)
-    {
-      IMU_RequestData(&hfdcan3,0x01,2);
-    }
-    else if(tick_ms%1==0)
-    {
-      IMU_RequestData(&hfdcan3,0x01,1);
-    }
-        
-    if(tick_ms>1000)
-      tick_ms=0; */
-      
       
   }
   else if (htim->Instance == TIM14) // 200Hz
